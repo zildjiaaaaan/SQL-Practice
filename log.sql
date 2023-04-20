@@ -37,3 +37,14 @@ WHERE (name LIKE '%Annabel%'
         LIMIT 1
     )
 ;
+
+-- Look into Get Fit Now Gym gold members
+-- with "48Z" in id and who check in Jan. 9, 2018
+SELECT id, name, membership_status, check_in_date, check_in_time, check_out_time
+FROM get_fit_now_member
+JOIN get_fit_now_check_in
+    ON id = membership_id
+WHERE id LIKE '%48Z%'
+    AND membership_status = 'gold'
+    AND check_in_date = '20180109'
+;
