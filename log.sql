@@ -100,3 +100,24 @@ WHERE gender = 'female'
     AND car_make = 'Tesla'
     AND car_model = 'Model S'
 ;
+
+-- Find the person's details mentioned in
+-- lead person's transcript (Part 2)
+SELECT person.*
+FROM drivers_license
+JOIN person
+    ON drivers_license.id = person.license_id
+WHERE gender = 'female'
+    AND (height >= '65' AND height <= '67')
+    AND hair_color = 'red'
+    AND car_make = 'Tesla'
+    AND car_model = 'Model S'
+    AND person.id IN (
+        SELECT person_id
+        FROM facebook_event_checkin
+        WHERE event_name LIKE '%SQL Symphony%'       
+            AND date LIKE '201712%'
+        GROUP BY person_id
+        HAVING COUNT(person_id) = 3
+    )
+;
