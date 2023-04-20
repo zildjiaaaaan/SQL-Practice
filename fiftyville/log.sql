@@ -47,3 +47,18 @@ WHERE year = '2021'
     AND day = '28'
     AND duration < '60'
 ;
+
+-- Look into further details of account numbers associated with the
+-- withdrawal ATM transactions on July 28, 2021 at Leggett Street:
+SELECT people.*, bank_accounts.account_number, creation_year
+FROM people
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+WHERE bank_accounts.account_number IN (
+    SELECT atm_transactions.account_number
+    FROM atm_transactions
+    WHERE year = '2021'
+        AND month = '7'
+        AND day = '28'
+        AND atm_location = 'Leggett Street'
+        AND transaction_type = 'withdraw'
+);
