@@ -61,3 +61,21 @@ WHERE get_fit_now_member.id LIKE '%48Z%'
     AND membership_status = 'gold'
     AND check_in_date = '20180109'
 ;
+
+-- Find the drivers license of the lead persons who
+-- has 'H42W' in their plate number
+SELECT drivers_license.*
+FROM drivers_license
+WHERE plate_number LIKE '%H42W%'
+    AND id IN (
+        SELECT person.license_id
+        FROM person
+        JOIN get_fit_now_member
+            ON person.id = get_fit_now_member.person_id
+        JOIN get_fit_now_check_in
+            ON get_fit_now_member.id = get_fit_now_check_in.membership_id
+        WHERE get_fit_now_member.id LIKE '%48Z%'
+            AND membership_status = 'gold'
+            AND check_in_date = '20180109'
+    ) 
+;
