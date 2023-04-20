@@ -14,3 +14,12 @@ date      type     description                                                  
                    Ave".
 
 #############################################
+
+Look into first witness who lives at the
+lives at the last house on "Northwestern Dr"
+
+id     name            license_id  address_number  address_street_name  ssn      
+-----  --------------  ----------  --------------  -------------------  ---------
+14887  Morty Schapiro  118009      4919            Northwestern Dr      111564949
+
+#############################################
