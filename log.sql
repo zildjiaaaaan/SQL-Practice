@@ -48,3 +48,16 @@ WHERE id LIKE '%48Z%'
     AND membership_status = 'gold'
     AND check_in_date = '20180109'
 ;
+
+-- Look into further details of the suspected
+-- members of the gym
+SELECT person.*
+FROM person
+JOIN get_fit_now_member
+    ON person.id = get_fit_now_member.person_id
+JOIN get_fit_now_check_in
+    ON get_fit_now_member.id = get_fit_now_check_in.membership_id
+WHERE get_fit_now_member.id LIKE '%48Z%'
+    AND membership_status = 'gold'
+    AND check_in_date = '20180109'
+;

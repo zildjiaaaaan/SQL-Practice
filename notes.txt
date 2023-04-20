@@ -56,3 +56,13 @@ id     name           membership_status  check_in_date  check_in_time  check_out
 48Z55  Jeremy Bowers  gold               20180109       1530           1700
 
 #############################################
+
+Look into further details of the lead persons
+who are gold members of the gym
+
+id     name           license_id  address_number  address_street_name    ssn      
+-----  -------------  ----------  --------------  ---------------------  ---------
+28819  Joe Germuska   173289      111             Fisk Rd                138909730
+67318  Jeremy Bowers  423327      530             Washington Pl, Apt 3A  871539279
+
+#############################################
