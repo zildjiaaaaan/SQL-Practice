@@ -79,3 +79,11 @@ WHERE plate_number LIKE '%H42W%'
             AND check_in_date = '20180109'
     ) 
 ;
+
+-- We got 'Jeremy Bowers' as primary lead
+-- Look into lead person's transcript for clues
+SELECT name, transcript
+FROM interview
+JOIN person ON interview.person_id = person.id
+WHERE name = 'Jeremy Bowers'
+;
