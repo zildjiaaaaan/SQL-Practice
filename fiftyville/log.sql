@@ -7,4 +7,11 @@ WHERE year = '2021'
     AND street = 'Humphrey Street'
 ;
 
--- 
+-- Find interview reports based on the crime scene descriptions
+SELECT *
+FROM interviews
+WHERE year = '2021'
+    AND month = '7'
+    AND day = '28'
+    AND transcript LIKE '%bakery%'
+;
