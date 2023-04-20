@@ -112,3 +112,16 @@ id     name              license_id  address_number  address_street_name  ssn
 99716  Miranda Priestly  202298      1883            Golden Ave           987756388
 
 #############################################
+
+Murderer: Jeremy Bowers
+
+Congrats, you found the murderer! But wait, there's more... If you think you're up for a
+challenge, try querying the interview transcript of the murderer to find the real
+villain behind this crime. If you feel especially confident in your SQL skills, try to
+complete this final step with no more than 2 queries. Use this same INSERT statement with
+your new suspect to check your answer.
+
+Mastermind: Miranda Priestly
+
+Congrats, you found the brains behind the murder! Everyone in SQL City hails you as the
+greatest SQL detective of all time. Time to break out the champagne!

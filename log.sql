@@ -121,3 +121,11 @@ WHERE gender = 'female'
         HAVING COUNT(person_id) = 3
     )
 ;
+
+-- Murderer: Jeremy Bowers
+INSERT INTO solution
+VALUES (1, 'Jeremy Bowers');
+
+-- Mastermind: Miranda Priestly
+INSERT INTO solution
+VALUES (1, 'Miranda Priestly');
