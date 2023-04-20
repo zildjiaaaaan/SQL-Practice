@@ -150,3 +150,48 @@ WHERE year = '2021'
 ORDER BY hour, minute
 LIMIT 1
 ;
+
+-- Look into passengers of the earlist flight who has passport number
+-- confirmed from the records of ATM transaction, bakery security logs, and
+-- less-than-a-minute phone calls
+
+SELECT people.*, bank_accounts.account_number, creation_year
+FROM people
+JOIN bank_accounts ON people.id = bank_accounts.person_id
+WHERE people.license_plate IN (
+    SELECT bakery_security_logs.license_plate
+    FROM bakery_security_logs
+    WHERE year = '2021'
+        AND month = '7'
+        AND day = '28'
+        AND hour = '10'
+        AND (minute >= '15' AND minute <= '25')
+        AND activity = 'exit'
+) AND bank_accounts.account_number IN (
+    SELECT atm_transactions.account_number
+    FROM atm_transactions
+    WHERE year = '2021'
+        AND month = '7'
+        AND day = '28'
+        AND atm_location = 'Leggett Street'
+        AND transaction_type = 'withdraw'
+) AND people.phone_number IN (
+    SELECT caller
+    FROM phone_calls
+    WHERE year = '2021'
+        AND month = '7'
+        AND day = '28'
+        AND duration < '60'
+) AND people.passport_number IN (
+    SELECT passengers.passport_number
+    FROM passengers
+    WHERE passengers.flight_id = (
+        SELECT flights.id
+        FROM flights
+        WHERE year = '2021'
+            AND month = '7'
+            AND day = '29'
+        ORDER BY hour, minute
+        LIMIT 1
+    )
+);
