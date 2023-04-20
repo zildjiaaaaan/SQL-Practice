@@ -214,3 +214,16 @@ WHERE year = '2021'
 ORDER BY hour, minute
 LIMIT 1
 ;
+
+-- Look for the thief's accomplice
+SELECT *
+FROM people
+WHERE people.phone_number = (
+    SELECT receiver
+    FROM phone_calls
+    WHERE year = '2021'
+        AND month = '7'
+        AND day = '28'
+        AND duration < '60'
+        AND caller = '(367) 555-5533'
+);
