@@ -87,3 +87,16 @@ FROM interview
 JOIN person ON interview.person_id = person.id
 WHERE name = 'Jeremy Bowers'
 ;
+
+-- Find the person's details mentioned in
+-- lead person's transcript (Part 1)
+SELECT person.*
+FROM drivers_license
+JOIN person
+    ON drivers_license.id = person.license_id
+WHERE gender = 'female'
+    AND (height >= '65' AND height <= '67')
+    AND hair_color = 'red'
+    AND car_make = 'Tesla'
+    AND car_model = 'Model S'
+;

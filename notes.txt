@@ -86,3 +86,20 @@ Jeremy Bowers  I was hired by a woman with a lot of money. I don't know her
                 attended the SQL Symphony Concert 3 times in December 2017.
 
 #############################################
+
+Find the person's details mentioned in
+lead person's transcript (Part 1)
+
+id      age  height  eye_color  hair_color  gender  plate_number  car_make  car_model
+------  ---  ------  ---------  ----------  ------  ------------  --------  ---------
+202298  68   66      green      red         female  500123        Tesla     Model S  
+291182  65   66      blue       red         female  08CM64        Tesla     Model S  
+918773  48   65      black      red         female  917UU3        Tesla     Model S 
+
+id     name              license_id  address_number  address_street_name  ssn      
+-----  ----------------  ----------  --------------  -------------------  ---------
+78881  Red Korb          918773      107             Camerata Dr          961388910
+90700  Regina George     291182      332             Maple Ave            337169072
+99716  Miranda Priestly  202298      1883            Golden Ave           987756388
+
+#############################################
