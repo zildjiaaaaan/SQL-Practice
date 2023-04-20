@@ -37,3 +37,13 @@ WHERE year = '2021'
     AND atm_location = 'Leggett Street'
     AND transaction_type = 'withdraw'
 ;
+
+-- Look into phone calls made in July 28, 2021 that has a duration of
+-- less than a minute
+SELECT *
+FROM phone_calls
+WHERE year = '2021'
+    AND month = '7'
+    AND day = '28'
+    AND duration < '60'
+;
