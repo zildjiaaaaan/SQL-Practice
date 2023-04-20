@@ -27,3 +27,13 @@ WHERE year = '2021'
     AND (minute >= '15' AND minute <= '25')
     AND activity = 'exit'
 ;
+
+-- Look into withdrawal ATM transactions on July 28, 2021 at Leggett Street:
+SELECT *
+FROM atm_transactions
+WHERE year = '2021'
+    AND month = '7'
+    AND day = '28'
+    AND atm_location = 'Leggett Street'
+    AND transaction_type = 'withdraw'
+;
