@@ -195,3 +195,22 @@ WHERE people.license_plate IN (
         LIMIT 1
     )
 );
+
+/*
++--------+-------+----------------+-----------------+---------------+----------------+---------------+
+|   id   | name  |  phone_number  | passport_number | license_plate | account_number | creation_year |
++--------+-------+----------------+-----------------+---------------+----------------+---------------+
+| 686048 | Bruce | (367) 555-5533 | 5773159633      | 94KL13X       | 49610011       | 2010          |
++--------+-------+----------------+-----------------+---------------+----------------+---------------+
+*/
+
+-- Look into the city the thief escaped to
+SELECT destination_airport_id, abbreviation, full_name, city
+FROM flights
+JOIN airports ON destination_airport_id = airports.id
+WHERE year = '2021'
+    AND month = '7'
+    AND day = '29'
+ORDER BY hour, minute
+LIMIT 1
+;
